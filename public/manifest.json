@@ -1,9 +1,9 @@
 {
-  "short_name": "React AZagatti Template",
-  "name": "React AZagatti Template",
+  "short_name": "Ioasys Test Front-end",
+  "name": "Ioasys Test Front-end",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "favicon.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }

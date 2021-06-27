@@ -1,26 +1,27 @@
-import { lazy, Suspense } from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Suspense } from 'react'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { Switch, Redirect } from 'react-router-dom'
+import { Hooks } from 'src/hooks'
+import { Loading } from 'src/components/Loading'
 
-const Example = lazy(() =>
-  import('src/pages/Example/Example').then(module => ({
-    default: module.Example,
-  })),
-)
-const GenericNotFound = lazy(() =>
-  import('src/pages/GenericNotFound/GenericNotFound').then(module => ({
-    default: module.GenericNotFound,
-  })),
-)
+import { Route } from './Route'
+
+import { Books, Login } from './paths'
 
 export const Routes = () => {
+  const queryClient = new QueryClient()
   return (
-    <Suspense fallback={<p>Carregando...</p>}>
-      <Switch>
-        <Route exact path="/" component={Example} />
-
-        <Route path="/404" component={GenericNotFound} />
-        <Redirect to="/404" />
-      </Switch>
+    <Suspense fallback={<Loading />}>
+      <Hooks>
+        <QueryClientProvider client={queryClient}>
+          <Switch>
+            <Route exact path="/" component={Login} />
+            <Route path="/livros" component={Books} isPrivate />
+            <Route path="/" component={Login} />
+            <Redirect to="/" />
+          </Switch>
+        </QueryClientProvider>
+      </Hooks>
     </Suspense>
   )
 }

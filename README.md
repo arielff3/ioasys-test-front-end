@@ -11,8 +11,6 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/coverage-98%25-brightgreen" alt="shield" />
-  <img src="https://api.netlify.com/api/v1/badges/6d390ba4-f867-4cde-8c0d-1707b99a9bf3/deploy-status" alt="shield" />
   <img src="https://img.shields.io/badge/version-1.0.0-red" alt="shield" />
 </p>
 
@@ -36,6 +34,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Prettier](https://github.com/prettier/prettier)
 - [Webpack](https://github.com/webpack/webpack)
 - [Babel](https://github.com/babel/babel)
+- [Jest](https://github.com/facebook/jest)
+- [RTL](https://github.com/testing-library/react-testing-library)
 
 <br/>
 
